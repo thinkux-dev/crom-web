@@ -1,6 +1,8 @@
 .hero-body{
   background-color: #0a211f;
   height: 100vh;
+  position: relative;
+  overflow: hidden;
 }
 
 .bg_img_body{
@@ -17,6 +19,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 2;
 }
 
 .bg_img{
@@ -41,12 +44,17 @@
 
 .hero_btns .first_hero_btn{
   border: none;
+  cursor: pointer;
+  color: #000;
+  font-size: 20px;
 }
 
 .hero_btns .second_hero_btn{
   background-color: transparent;
   color: #fff;
   border-color: #fff;
+  cursor: pointer;
+  font-size: 20px;
 }
 
 .bg_img_body small{
@@ -59,4 +67,64 @@
   width: 1368px;
   height: 100px;
   margin-top: 62px;
+}
+
+/* Image group styling with your requested direction */
+.vertical-image-groups {
+  position: absolute;
+  /* left: -300px; */
+  left: -100px;
+  top: -200px;
+  display: flex;
+  gap: 40px;
+  transform: rotate(15deg) skew(-15deg);
+  z-index: 1;
+}
+
+.image-group {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.group-image {
+  width: 160px; /* Reduced size */
+  height: 240px; /* Reduced size */
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Specific positioning for each group */
+.group-1 {
+  animation: scrollDown 25s linear infinite;
+}
+
+.group-2 {
+  transform: translateY(200px);
+  animation: scrollUp 30s linear infinite;
+}
+
+.group-3 {
+  transform: translateY(-100px);
+  animation: scrollDown 20s linear infinite;
+}
+
+/* Animations */
+@keyframes scrollDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes scrollUp {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
 }
