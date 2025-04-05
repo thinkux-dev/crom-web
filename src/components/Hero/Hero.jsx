@@ -1,46 +1,48 @@
 import React from 'react';
 import './Hero.css';
-import logo from "../../asset/img/crom_logo.png"
-import portfolio from "../../asset/img/portfolio.png"
-import img_1 from "../../asset/img/image-vertical.png"
+import hero_logo from "../../asset/img/hero_logo.png";
+import start_project_btn_icon from "../../asset/img/start_project_button_icon.png";
 
 const Hero = () => {
   return (
     <div className="hero-body">
-      {/* Vertically scrolling image groups */}
-      <div className="vertical-image-groups">
-        {[1, 2, 3].map((group) => (
-          <div key={group} className={`image-group group-${group}`}>
-            {[1, 2, 3, 4, 5].map((img) => (
-              <img
-                key={img}
-                src={img_1}
-                alt={`Group ${group} Image ${img}`}
-                className="group-image"
-              />
-            ))}
-          </div>
-        ))}
-      </div>
-        
-      <div className='bg_img_body'>
-        <img 
-          src={logo}
-          alt=''
-          className='bg_img'
-        />
-        <small>
-          Power Up that Creative Idea with Cromuniverx
-        </small>
-        <div className='hero_btns'>
-          <button className='first_hero_btn'>Start Project</button>
-          <button className='second_hero_btn'>Free Consultation</button>
+      {/* Gradient overlays */}
+      <div className="gradient-left"></div>
+      <div className="gradient-right"></div>
+      
+      {/* Corner accents */}
+      <div className="corner-accent top-right"></div>
+      <div className="corner-accent bottom-left"></div>
+      
+      {/* Main Hero Content */}
+      <div className="hero-content">
+        <div className="logo-icon">
+          <img src={hero_logo} alt="Cromuniverx Logo" />
         </div>
-        <img 
-          src={portfolio}
-          alt=''
-          className='portfolio_img'
-        />
+        
+        <h1 className="hero-title">
+          <span className="title-white">Power Up </span>
+          <span className="title-green">that</span><br />
+          <span className="title-white">Creative </span>
+          <span className="title-green">Idea </span>
+          <span className="title-white">with</span><br />
+          <span className="title-green">Crom</span>
+          <span className="title-white">univerx</span>
+        </h1>
+        
+        <p className="hero-description">
+          a full Suite Business Tech Agency, bringing you innovative software,
+          AI automation, and creative design solutions that propel your
+          business forward
+        </p>
+        
+        <div className="hero-btns">
+          <button className="first_hero_btn">
+            <img src={start_project_btn_icon} alt="Start Project Icon" className="btn-icon" />
+            Start Project
+          </button>
+          <button className="second_hero_btn">Free Consultation</button>
+        </div>
       </div>
     </div>
   );
